@@ -4,7 +4,7 @@ using namespace std;
 
 int kthsmallest(int arr[], int n, int k)
 {
-    sort(arr, arr + n);
+    sort(arr, arr + n+1);
     return arr[k - 1];
 }
 
