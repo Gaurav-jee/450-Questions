@@ -1,43 +1,30 @@
-// { Driver Code Starts
-//Initial function template for C++
-
-#include<bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
-int kthSmallest(int *, int, int, int);
- 
+int kthsmallest(int arr[], int n, int k)
+{
+    sort(arr, arr + n+1);
+    return arr[k - 1];
+}
+
 int main()
 {
-    // ios_base::sync_with_stdio(false);
-    // cin.tie(NULL);
-    
-    int test_case;
-    cin>>test_case;
-    while(test_case--)
+    int t;
+    int N;
+    int k;
+    cin >> t;
+    while (t != 0)
     {
-        int number_of_elements;
-        cin>>number_of_elements;
-        int a[number_of_elements];
-        
-        for(int i=0;i<number_of_elements;i++)
-            cin>>a[i];
-            
-        int k;
-        cin>>k;
-        cout<<kthSmallest(a, 0, number_of_elements-1, k)<<endl;
+        cin >> N;
+        int arr[N];
+        for (int i = 0; i < N; i++)
+        {
+            cin >> arr[i];
+        }
+        cin >> k;
+        cout << kthsmallest(arr, N, k) << endl;
+        t--;
     }
     return 0;
-}// } Driver Code Ends
-
-
-//User function template for C++
-
-// arr : given array
-// l : starting index of the array i.e 0
-// r : ending index of the array i.e size-1
-// k : find kth smallest element and return using this function
-int kthSmallest(int arr[], int l, int r, int k) {
-    sort(arr, arr+r+1);
-
-    return arr[k-1];
 }
